@@ -58,6 +58,7 @@ public class MysqlGenerator {
 		gc.setOutputDir(projectPath + "/src/main/java");
 		gc.setAuthor("zheng_fx");
 		gc.setOpen(false);
+		gc.setFileOverride(true);//是否覆盖已有文件
 		mpg.setGlobalConfig(gc);
 
 		// 数据源配置
@@ -103,7 +104,7 @@ public class MysqlGenerator {
 		strategy.setEntityLombokModel(true);
 //        strategy.setSuperControllerClass("com.baomidou.mybatisplus.samples.generator.common.BaseController");
 		strategy.setInclude(scanner("表名"));
-		strategy.setSuperEntityColumns("id");
+//		strategy.setSuperEntityColumns("id"); //---注掉，因为这行导致生成的实体类无id
 		strategy.setControllerMappingHyphenStyle(true);
 		strategy.setTablePrefix(pc.getModuleName() + "_");
 		mpg.setStrategy(strategy);
