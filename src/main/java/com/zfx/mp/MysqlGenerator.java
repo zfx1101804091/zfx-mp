@@ -21,7 +21,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 /**
  * <p>
- * mysql 代码生成器演示例子
+ * mysql 代码生成器演示例子,单表生成
  * </p>
  */
 public class MysqlGenerator {
@@ -59,11 +59,13 @@ public class MysqlGenerator {
 		gc.setAuthor("zheng_fx");
 		gc.setOpen(false);
 		gc.setFileOverride(true);//是否覆盖已有文件
+
+
 		mpg.setGlobalConfig(gc);
 
 		// 数据源配置
 		DataSourceConfig dsc = new DataSourceConfig();
-		dsc.setUrl("jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&useSSL=false&characterEncoding=utf8");
+		dsc.setUrl("jdbc:mysql://127.0.0.1:3306/gmall?useUnicode=true&useSSL=false&characterEncoding=utf8");
 		// dsc.setSchemaName("public");
 		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setUsername("root");
