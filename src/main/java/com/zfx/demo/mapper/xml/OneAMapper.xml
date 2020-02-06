@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zfx.demo.mapper.OneAMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zfx.demo.entity.OneA">
+        <id column="id" property="id" />
+        <result column="name_z" property="nameZ" />
+        <result column="name_x" property="nameX" />
+        <result column="value_z" property="valueZ" />
+        <result column="name_c" property="nameC" />
+        <result column="name_v" property="nameV" />
+        <result column="value_x" property="valueX" />
+        <result column="name_b" property="nameB" />
+        <result column="name_n" property="nameN" />
+        <result column="value_c" property="valueC" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name_z, name_x, value_z, name_c, name_v, value_x, name_b, name_n, value_c
+    </sql>
+
+</mapper>
