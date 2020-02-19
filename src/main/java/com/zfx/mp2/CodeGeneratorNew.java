@@ -14,7 +14,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 /**
  * @author
  * @since
- *  单库逆向生成
+ *  单库逆向生成---一般用这个
  */
 public class CodeGeneratorNew {
 
@@ -42,12 +42,21 @@ public class CodeGeneratorNew {
         mpg.setGlobalConfig(gc);
 
         // 3、数据源配置
-        DataSourceConfig dsc = new DataSourceConfig();
+      /*  DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
         dsc.setDbType(DbType.MYSQL);
+        mpg.setDataSource(dsc);*/
+
+        /*oracle 20200219*/
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl("jdbc:oracle:thin:@222.85.111.20:9521:ORCL");
+        // dsc.setSchemaName("public");
+        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
+        dsc.setUsername("hyzx");
+        dsc.setPassword("hyzx123");
         mpg.setDataSource(dsc);
 
         // 4、包配置
