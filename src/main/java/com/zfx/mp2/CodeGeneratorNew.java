@@ -20,7 +20,7 @@ public class CodeGeneratorNew {
 
     public static void main(String[] args) {
 
-        String moduleName = "demo";
+        String moduleName = "merchant";
 
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -35,34 +35,34 @@ public class CodeGeneratorNew {
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
         gc.setIdType(IdType.AUTO); //主键策略
         gc.setDateType(DateType.ONLY_DATE);//定义生成的实体类中日期类型
-        gc.setSwagger2(true);//开启Swagger2模式
+//        gc.setSwagger2(true);//开启Swagger2模式
         gc.setBaseColumnList(true);
         gc.setBaseResultMap(true);//生成xml中的ResultMap
 
         mpg.setGlobalConfig(gc);
 
         // 3、数据源配置
-      /*  DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
         dsc.setDbType(DbType.MYSQL);
-        mpg.setDataSource(dsc);*/
+        mpg.setDataSource(dsc);
 
         /*oracle 20200219*/
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:oracle:thin:@222.85.111.20:9521:ORCL");
+       /* DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl("jdbc:oracle:thin:@192.168.199.106:1521:helowin");
         // dsc.setSchemaName("public");
         dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
         dsc.setUsername("hyzx");
         dsc.setPassword("hyzx123");
-        mpg.setDataSource(dsc);
+        mpg.setDataSource(dsc);*/
 
         // 4、包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(moduleName); //模块名
-        pc.setParent("com.zfx");
+        pc.setParent("com.shanjupay");
         pc.setController("controller");
         pc.setEntity("entity");
         pc.setService("service");
